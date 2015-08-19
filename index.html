@@ -1,10 +1,24 @@
 <DOCTYPE html>
-<html>
+<html ng-app='parseQueue'>
 <head>
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<title>ParseQ</title>
 </head>
-<body>
+<body ng-controller='MainController'>
+
+
+	<input ng-model='question' placeholder='Ask Here'></input>
+	<button class='button' ng-click='postData()'>Submit</button>
+
+	<div class="questions-container">
+		<p ng-repeat'question in questions'> {{question.text}} </p>
+
+	</div>
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/MainController.js"></script>
+<script src="js/services/parseService.js"></script>
+<script src="js/defaultHeaders.js"></script>
 </body>
 </html>
